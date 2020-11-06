@@ -10,3 +10,10 @@ Serve para diminuir os tipos primitivos de uma classe.
 https://carlosschults.net/pt/value-objects-ferramenta/
 
 
+
+
+-> Design By Contracts
+
+Basicamente ele aplica validações a partir da lib Flunt
+
+
