@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PaymentContext.Domain.ValuesObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,33 +7,27 @@ namespace PaymentContext.Domain.Entities
 {
     public abstract class Payment // Não posso instanciar um pagamento.
     {
-        public string Number { get; set; }
-        public DateTime PayDate { get; set; }
-        public DateTime ExpireDate { get; set; }
-        public decimal Total { get; set; }
-        public decimal TotalPaid { get; set; }
-        public string Document { get; set; }
-        public string Payer { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-    }
+        protected Payment(DateTime payDate, DateTime expireDate, decimal total, decimal totalPaid, Document document, string payer, Address address, Email email)
+        {
+            Number = Guid.NewGuid().ToString().Replace("-","").Substring(0, 10).ToUpper();
+            PayDate = payDate;
+            ExpireDate = expireDate;
+            Total = total;
+            TotalPaid = totalPaid;
+            Document = document;
+            Payer = payer;
+            Address = address;
+            Email = email;
+        }
 
-    public class BoletoPayment : Payment
-    {
-        public string BarCode { get; set; }
-        public string BoletoNumber { get; set; }
+        public string Number { get; private set; }
+        public DateTime PayDate { get; private set; }
+        public DateTime ExpireDate { get; private set; }
+        public decimal Total { get; private set; }
+        public decimal TotalPaid { get; private set; }
+        public Document Document { get; private set; }
+        public string Payer { get; private set; }
+        public Address Address { get; private set; }
+        public Email Email { get; private set; }
     }
-
-    public class CreditCardPayment : Payment
-    {
-        public string CardHolderName { get; set; }
-        public string CardNumber { get; set; }
-        public string LastTransactionNumber { get; set; }
-    }
-
-    public class PaypalPayment : Payment
-    {
-        public string TransactionCode { get; set; }
-    }
-
 }

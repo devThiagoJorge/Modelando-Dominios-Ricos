@@ -1,0 +1,12 @@
+ Principio do Aberto Fechado (Open Close) -> A classe deve estar aberta para extensão, mas fechada para mudanças, ou seja, apenas a ninguém de fora deve mudar nada...
+
+
+
+
+
+-> Value objects: são objetos que não possuem identidade, possui apenas valor, ou seja, não importa saber quem é, apenas saber o valor. 
+Serve para diminuir os tipos primitivos de uma classe. 
+
+https://carlosschults.net/pt/value-objects-ferramenta/
+
+

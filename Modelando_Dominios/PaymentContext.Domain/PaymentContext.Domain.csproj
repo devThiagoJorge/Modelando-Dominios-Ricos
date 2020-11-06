@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PaymentContext.Shared\PaymentContext.Shared.csproj" />
-    <ProjectReference Include="..\PaymentContext.Tests\PaymentContext.Tests.csproj" />
   </ItemGroup>
 
 </Project>
